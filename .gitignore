@@ -1,4 +1,6 @@
 *.pem
 *.key
 *.csr
-.DS_Storeg
+.DS_Store
+exclude
+__pycache__

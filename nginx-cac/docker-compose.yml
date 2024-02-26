@@ -1,0 +1,19 @@
+version: '3'
+services:
+  nginx:
+    build: .
+    ports:
+      - "8443:443"
+    volumes:
+      - ./data:/www/data
+    depends_on:
+      - flaskapp
+
+  flaskapp:
+    build:
+      context: .
+      dockerfile: Dockerfile-app
+    volumes:
+      - .:/app
+    expose:
+      - "8000"

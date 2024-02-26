@@ -12,8 +12,5 @@ COPY server_cert.pem server_privkey.pem combined.pem /etc/nginx/
 # Drectory for demo website
 RUN mkdir -p /www/data && chown -R nginx:nginx /www/data
 
-# Demo website
-COPY index.html /www/data
-
 # Expose port 443 for SSL traffic
 EXPOSE 443
