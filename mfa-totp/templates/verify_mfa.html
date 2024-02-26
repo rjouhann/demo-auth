@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify MFA</title>
+</head>
+<body>
+    <h1>Verify Multi-Factor Authentication (MFA)</h1>
+    <p>Please enter the verification code from your authenticator app:</p>
+    <form action="{{ url_for('verify_mfa') }}" method="post">
+        <label for="totp_code">Verification Code:</label>
+        <input type="text" id="totp_code" name="totp_code" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

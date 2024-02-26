@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup MFA</title>
+</head>
+<body>
+    <h1>Setup Multi-Factor Authentication (MFA)</h1>
+    <p>Scan the QR code below using your authenticator app:</p>
+    <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
+    <p>If you can't scan the QR code, manually enter the following secret key:</p>
+    <p><strong>Secret Key:</strong> {{ totp_secret }}</p>
+    <p>After setting up the authenticator app, enter the generated code below to complete the setup:</p>
+    <form action="{{ url_for('verify_mfa') }}" method="post">
+        <label for="totp_code">Enter TOTP Code:</label>
+        <input type="text" id="totp_code" name="totp_code" required>
+        <button type="submit">Submit</button>
+    </form>    
+</body>
+</html>

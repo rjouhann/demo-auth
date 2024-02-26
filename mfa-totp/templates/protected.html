@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected Page</title>
+</head>
+<body>
+    <h1>Welcome to the Protected Page</h1>
+    <p>This is a protected page. You are logged in and your multi-factor authentication has been verified.</p>
+    <form action="{{ url_for('logout') }}" method="post">
+        <button type="submit">Logout</button>
+    </form>
+    <p>Need your backup codes? <a href="{{ url_for('backup_codes') }}">Click here</a>.</p>
+</body>
+</html>

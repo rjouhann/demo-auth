@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SSL Client Authentication demo</title>
+</head>
+
+<body>
+<h2>Client SSL authentication succeeded.</h2>
+
+<p>You can look in the response headers from your browser’s development tools
+to see what information the server could provide about the CAC.</p>
+
+<!--# if expr="$ssl_client_s_dn" -->
+
+<p>Your CAC certificate's subject identifier is: <b><!--# echo var="ssl_client_s_dn" --></b> which
+expires in <b><!--# echo var="ssl_client_v_remain" --></b> days.</p>
+
+<p>Your client certificate details:</p>
+<ul>
+    <li>Subject Identifier: <b><!--# echo var="ssl_client_s_dn" --></b></li>
+    <li>Issuer Identifier: <b><!--# echo var="ssl_client_i_dn" --></b></li>
+    <li>Validity Start Date: <b><!--# echo var="ssl_client_v_start" --></b></li>
+    <li>Validity End Date: <b><!--# echo var="ssl_client_v_end" --></b></li>
+    <li>Days Remaining: <b><!--# echo var="ssl_client_v_remain" --></b> days</li>
+    <li>Serial Number: <b><!--# echo var="ssl_client_serial" --></b></li>
+    <li>Verification Result: <b><!--# echo var="ssl_client_verify" --></b></li>
+</ul>
+
+<!--# else -->
+
+<p>Something was wrong reading the CAC certificate, or server-side includes were disabled.</p>
+
+<!--# endif -->
+</body>
+</html>
