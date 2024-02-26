@@ -41,7 +41,7 @@ rm server.csr
 
 These commands create `server_cert.pem` and `server_privkey.pem` which are used by the Nginx server for SSL/TLS.
 
-2. **Build and Run the Docker image**:
+2. **Build and Run the Docker images**:
 
 ```sh
 docker-compose up --build -d
@@ -74,3 +74,4 @@ If you encounter any issues accessing the website or if the client certificate a
 - Ensure your client certificate is properly installed in your browser.
 - Verify that the `default.conf` file is correctly configured for SSL and client certificate requirements.
 - Check the Docker container logs for any errors: `docker logs nginx-cac-flaskapp-1` or `docker logs nginx-cac-nginx-1`
+- Stop and delete the demo app `docker-compose down`.
