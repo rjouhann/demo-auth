@@ -87,3 +87,4 @@ If you encounter any issues accessing the website or if the client certificate a
 - Verify that the `default.conf` file is correctly configured for SSL and client certificate requirements.
 - Check the Docker container logs for any errors: `docker logs nginx-cac-flaskapp-1` or `docker logs nginx-cac-nginx-1`
 - Stop and delete the demo app `docker-compose down`.
+- Use Firefox for testing due to its easy process for deleting old Authentication Decisions in the Firefox Certificate Manager.
