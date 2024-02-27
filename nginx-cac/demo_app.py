@@ -5,6 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     client_verify = request.headers.get('X-Client-Verified', 'None')
+    print(f"Authentication succeed. X-Client-Verified: {client_verify}")
     if client_verify == 'SUCCESS':
         # Extracting certificate details from headers
         subject_dn = request.headers.get('X-Subject-DN', 'Not provided')
@@ -30,6 +31,7 @@ def index():
         """
         return html_response, 200
     else:
+        print(f"Authentication failed. X-Client-Verified: {client_verify}")
         return '<h2>Client SSL authentication failed.</h2><p>Please ensure you have a valid client certificate.</p>', 401
 
 if __name__ == '__main__':

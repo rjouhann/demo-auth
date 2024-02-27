@@ -4,7 +4,7 @@ This demo sets up an Nginx server configured for SSL/TLS with Client Certificate
 
 ## Prerequisites
 
-- Docker installed on your machine.
+- Docker and Python installed on your machine.
 - SSL/TLS Certificates: You will need:
   - A combination of Root CA and intermediate certificates (`combined.pem`).
   - A client certificate signed by the intermediate CA.
@@ -41,7 +41,12 @@ rm server.csr
 
 These commands create `server_cert.pem` and `server_privkey.pem` which are used by the Nginx server for SSL/TLS.
 
-2. **Build and Run the Docker images**:
+2. Install the required dependencies:
+```
+pip3 install -r requirements.txt
+```
+
+3. **Build and Run the Docker images**:
 
 ```sh
 docker-compose up --build -d
