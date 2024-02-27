@@ -42,7 +42,8 @@ rm server.csr
 These commands create `server_cert.pem` and `server_privkey.pem` which are used by the Nginx server for SSL/TLS.
 
 2. Install the required dependencies:
-```
+
+```sh
 pip3 install -r requirements.txt
 ```
 
