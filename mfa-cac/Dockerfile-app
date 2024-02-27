@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-COPY demo_app.py /app
+COPY demo_app_mfa_cac.py /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir flask gunicorn
@@ -17,4 +17,4 @@ EXPOSE 8000
 ENV NAME World
 
 # Run app.py when the container launches
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "demo_app:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "demo_app_mfa_cac:app"]

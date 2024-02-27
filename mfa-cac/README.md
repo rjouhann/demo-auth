@@ -47,7 +47,13 @@ These commands create `server_cert.pem` and `server_privkey.pem` which are used 
 pip3 install -r requirements.txt
 ```
 
-3. **Build and Run the Docker images**:
+3. The default user account for demonstration purposes has a predefined password. You can change it in the `demo_app_mfa_cac.py`:
+
+```python
+users = {'demo': {'password': 'changeme'}}
+```
+
+4. **Build and Run the Docker images**:
 
 ```sh
 docker-compose up --build -d

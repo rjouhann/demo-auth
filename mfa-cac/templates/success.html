@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SSL Client Authentication Demo</title>
+</head>
+<body>
+<h2>Client SSL authentication succeeded.</h2>
+<p>Your client certificate details:</p>
+<ul>
+    <li>Subject Identifier: <b>{{ subject_dn }}</b></li>
+    <li>Verification Result: <b>{{ client_verify }}</b></li>
+</ul>
+<form action="{{ url_for('logout') }}" method="post">
+    <button type="submit">Logout</button>
+</form>
+</body>
+</html>
