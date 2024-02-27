@@ -1,4 +1,4 @@
-# Demo Flask MFA App
+# Demo Flask App MFA with TOTP
 
 This application demonstrates a basic Flask app implementing Multi-Factor Authentication (MFA) with TOTP (Time-based One-time Password).
 

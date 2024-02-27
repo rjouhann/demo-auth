@@ -1,4 +1,4 @@
-# Nginx with Client Certificate Authentication Demo
+# Demo Flask App MFA with CAC
 
 This demo sets up an Nginx server configured for SSL/TLS with Client Certificate Authentication (CAC), serving a simple HTML page. It demonstrates how to configure Nginx to require and validate client certificates, ensuring secure, encrypted connections while identifying clients based on SSL certificates.
 
